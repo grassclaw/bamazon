@@ -16,6 +16,7 @@ inquirer
     .then(function (answer) {
         switch (answer.Initialize) {
             case "Yes let's enter BAMAZON":
+                console.log(bamazon.InitialInventory);
                 bamazon.userSetup();//checks database and table and creates if necessary
 
                 console.log("******************************************")

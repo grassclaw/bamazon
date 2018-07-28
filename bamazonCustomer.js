@@ -1,4 +1,5 @@
 var mysql = require("mysql");
+var inquirer = require("inquirer");
 
 // create the connection information for the sql database
 var con = mysql.createConnection({
@@ -99,11 +100,11 @@ module.exports = {
     },
     read: function () {
         console.log("Selecting all products...\n");
-        connection.query("SELECT * FROM products", function (err, res) {
+        con.query("SELECT * FROM products", function (err, res) {
             if (err) throw err;
             // Log all results of the SELECT statement
             console.log(res);
-            connection.end();
+            con.end();
         });
     },
     closeStore: function () {
